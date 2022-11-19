@@ -1,4 +1,4 @@
-import { StyleSheet, TextInput, Button, View, Text } from 'react-native';
+import { StyleSheet, TextInput, Button, View } from 'react-native';
 import { useState } from 'react';
 
 interface Props {
