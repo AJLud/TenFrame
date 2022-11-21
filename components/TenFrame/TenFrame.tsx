@@ -25,8 +25,8 @@ const TenFrame = ({ number, windowWidth }: Props) => {
 
   return (
     <View style={styles.container}>
-      {frameArray.map(frame => {
-        return <Frame filled={frame.filled} windowWidth={windowWidth} />;
+      {frameArray.map((frame, i) => {
+        return <Frame key={i} filled={frame.filled} windowWidth={windowWidth} />;
       })}
     </View>
   );

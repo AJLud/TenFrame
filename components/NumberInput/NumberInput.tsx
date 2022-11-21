@@ -1,4 +1,4 @@
-import { StyleSheet, TextInput, Button, View } from 'react-native';
+import { StyleSheet, TextInput, TouchableOpacity, View, Text } from 'react-native';
 import { useState } from 'react';
 
 interface Props {
@@ -20,7 +20,9 @@ export const NumberInput = ({ setInputNumber, windowWidth }: Props) => {
           parseInt(validated) > 10 ? setNumber('10') : setNumber(validated);
         }}
       />
-      <Button title="Go!" color="#009d0d" onPress={() => setInputNumber(number)} />
+      <TouchableOpacity style={styles.button} onPress={() => setInputNumber(number)}>
+        <Text style={styles.text}>Go!</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -35,5 +37,22 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     fontSize: 30,
     textAlign: 'center',
+    borderRadius: 10,
+  },
+  button: {
+    backgroundColor: '#009d0d',
+    height: 100,
+    aspectRatio: 1 / 1,
+    borderWidth: 2,
+    borderRadius: 180,
+    borderColor: '#fff',
+    margin: 12,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    fontSize: 35,
+    color: '#fff',
   },
 });
