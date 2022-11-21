@@ -13,23 +13,21 @@ const TenFrame = ({ number, windowWidth }: Props) => {
     i < number ? frameArray.push({ filled: true }) : frameArray.push({ filled: false });
   }
 
-  const styles = StyleSheet.create({
-    container: {
-      display: 'flex',
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      width: windowWidth,
-      paddingTop: 50,
-    },
-  });
-
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { width: windowWidth }]}>
       {frameArray.map((frame, i) => {
         return <Frame key={i} filled={frame.filled} windowWidth={windowWidth} />;
       })}
     </View>
   );
 };
+const styles = StyleSheet.create({
+  container: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    paddingTop: 50,
+  },
+});
 
 export default TenFrame;
