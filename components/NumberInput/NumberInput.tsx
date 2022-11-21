@@ -1,4 +1,4 @@
-import { StyleSheet, TextInput, TouchableOpacity, View, Text } from 'react-native';
+import { StyleSheet, TextInput, TouchableOpacity, View, Text, Keyboard } from 'react-native';
 import { useState } from 'react';
 
 interface Props {
@@ -20,7 +20,13 @@ export const NumberInput = ({ setInputNumber, windowWidth }: Props) => {
           parseInt(validated) > 10 ? setNumber('10') : setNumber(validated);
         }}
       />
-      <TouchableOpacity style={styles.button} onPress={() => setInputNumber(number)}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => {
+          Keyboard.dismiss();
+          return setInputNumber(number);
+        }}
+      >
         <Text style={styles.text}>Go!</Text>
       </TouchableOpacity>
     </View>
