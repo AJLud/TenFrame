@@ -10,7 +10,6 @@ export default function App() {
   const [inputNumber, setInputNumber] = useState<number>(0);
 
   const { width } = useScreenSize();
-
   const windowWidth = width > 1300 ? width * 0.5 : width * 0.75;
 
   return (
