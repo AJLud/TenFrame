@@ -1,33 +1,35 @@
 import { StyleSheet, View, Dimensions } from 'react-native';
+import useScreenSize from '../../hooks/useScreenSize';
 import Frame from '../Frame/Frame';
 
 interface Props {
   number: number;
+  windowWidth: number;
 }
 
-const TenFrame = ({ number }: Props) => {
-  let array = [];
+const TenFrame = ({ number, windowWidth }: Props) => {
+  let frameArray = [];
   for (let i = 0; i < 10; i++) {
-    i < number ? array.push({ filled: true }) : array.push({ filled: false });
+    i < number ? frameArray.push({ filled: true }) : frameArray.push({ filled: false });
   }
+
+  const styles = StyleSheet.create({
+    container: {
+      display: 'flex',
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      width: windowWidth,
+      paddingTop: 50,
+    },
+  });
 
   return (
     <View style={styles.container}>
-      {array.map(frame => {
-        return <Frame filled={frame.filled} />;
+      {frameArray.map(frame => {
+        return <Frame filled={frame.filled} windowWidth={windowWidth} />;
       })}
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    width: 500,
-    height: 200,
-  },
-});
 
 export default TenFrame;

@@ -3,9 +3,10 @@ import { useState } from 'react';
 
 interface Props {
   setInputNumber: Function;
+  windowWidth: number;
 }
 
-export const NumberInput = ({ setInputNumber }: Props) => {
+export const NumberInput = ({ setInputNumber, windowWidth }: Props) => {
   const [number, setNumber] = useState<number>(0);
   return (
     <View>
@@ -26,10 +27,12 @@ export const NumberInput = ({ setInputNumber }: Props) => {
 const styles = StyleSheet.create({
   input: {
     height: 100,
-    width: 200,
+    width: 100,
     margin: 12,
     borderWidth: 1,
     padding: 10,
     backgroundColor: '#fff',
+    fontSize: 30,
+    textAlign: 'center',
   },
 });

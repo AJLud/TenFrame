@@ -4,16 +4,20 @@ import { StyleSheet, View } from 'react-native';
 import { NumberDisplay } from './components/NumberDisplay/NumberDisplay';
 import { NumberInput } from './components/NumberInput/NumberInput';
 import TenFrame from './components/TenFrame/TenFrame';
+import useScreenSize from './hooks/useScreenSize';
 
 export default function App() {
   const [inputNumber, setInputNumber] = useState<number>(0);
 
+  const { width } = useScreenSize();
+
+  const windowWidth = width > 1300 ? width * 0.5 : width * 0.75;
+
   return (
     <View style={styles.container}>
-      <StatusBar style="auto" />
-      <TenFrame number={inputNumber} />
-      <NumberDisplay number={inputNumber} />
-      <NumberInput setInputNumber={setInputNumber} />
+      <TenFrame number={inputNumber} windowWidth={windowWidth} />
+      <NumberDisplay number={inputNumber} windowWidth={windowWidth} />
+      <NumberInput setInputNumber={setInputNumber} windowWidth={windowWidth} />
     </View>
   );
 }
