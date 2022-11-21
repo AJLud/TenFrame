@@ -1,5 +1,5 @@
-import { StyleSheet, View, Dimensions } from 'react-native';
-import useScreenSize from '../../hooks/useScreenSize';
+import { StyleSheet, View } from 'react-native';
+
 import Frame from '../Frame/Frame';
 
 interface Props {

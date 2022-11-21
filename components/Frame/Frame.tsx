@@ -17,11 +17,11 @@ const Frame = ({ filled, windowWidth }: Props) => {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      height: FrameSize,
+      width: FrameSize,
       aspectRatio: 1 / 1,
     },
     counter: {
-      height: FrameSize * 0.75,
+      width: FrameSize * 0.75,
       aspectRatio: 1 / 1,
       borderWidth: 2,
       borderColor: '#000000',
@@ -29,6 +29,7 @@ const Frame = ({ filled, windowWidth }: Props) => {
       backgroundColor: '#ff0000',
     },
   });
+
   return <View style={styles.frame}>{filled && <View style={styles.counter}></View>}</View>;
 };
 

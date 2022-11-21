@@ -7,7 +7,7 @@ const useScreenSize = () => {
   const [dimensions, setDimensions] = useState(window);
 
   useEffect(() => {
-    const subscriber = Dimensions.addEventListener('change', ({ window, screen }) => {
+    const subscriber = Dimensions.addEventListener('change', ({ window }) => {
       setDimensions(window);
     });
     return () => subscriber?.remove();
