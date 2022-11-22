@@ -9,13 +9,13 @@ export default function App() {
   const [inputNumber, setInputNumber] = useState<number>(0);
 
   const { width } = useScreenSize();
-  const windowWidth = width > 1300 ? width * 0.5 : width * 0.75;
+  const screenWidth = width > 1300 ? width * 0.5 : width * 0.75;
 
   return (
     <View style={styles.container}>
-      <TenFrame number={inputNumber} windowWidth={windowWidth} />
-      <NumberDisplay number={inputNumber} windowWidth={windowWidth} />
-      <NumberInput setInputNumber={setInputNumber} windowWidth={windowWidth} />
+      <TenFrame number={inputNumber} screenWidth={screenWidth} />
+      <NumberDisplay number={inputNumber} screenWidth={screenWidth} />
+      <NumberInput setInputNumber={setInputNumber} screenWidth={screenWidth} />
     </View>
   );
 }

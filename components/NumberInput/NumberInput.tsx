@@ -3,10 +3,10 @@ import { useState } from 'react';
 
 interface Props {
   setInputNumber: Function;
-  windowWidth: number;
+  screenWidth: number;
 }
 
-export const NumberInput = ({ setInputNumber, windowWidth }: Props) => {
+export const NumberInput = ({ setInputNumber, screenWidth }: Props) => {
   const [number, setNumber] = useState<string>();
   return (
     <View>

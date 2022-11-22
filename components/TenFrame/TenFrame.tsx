@@ -4,19 +4,19 @@ import Frame from '../Frame/Frame';
 
 interface Props {
   number: number;
-  windowWidth: number;
+  screenWidth: number;
 }
 
-const TenFrame = ({ number, windowWidth }: Props) => {
+const TenFrame = ({ number, screenWidth }: Props) => {
   let frameArray = [];
   for (let i = 0; i < 10; i++) {
     i < number ? frameArray.push({ filled: true }) : frameArray.push({ filled: false });
   }
 
   return (
-    <View style={[styles.container, { width: windowWidth }]}>
+    <View style={[styles.container, { width: screenWidth }]}>
       {frameArray.map((frame, i) => {
-        return <Frame key={i} filled={frame.filled} windowWidth={windowWidth} />;
+        return <Frame key={i} filled={frame.filled} screenWidth={screenWidth} />;
       })}
     </View>
   );

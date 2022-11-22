@@ -2,10 +2,10 @@ import { StyleSheet, Text } from 'react-native';
 
 interface Props {
   number: number;
-  windowWidth: number;
+  screenWidth: number;
 }
 
-export const NumberDisplay = ({ number, windowWidth }: Props) => {
+export const NumberDisplay = ({ number, screenWidth }: Props) => {
   return <Text style={styles.numberDisplay}>{number}</Text>;
 };
 

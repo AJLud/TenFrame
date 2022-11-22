@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react';
 import { Dimensions } from 'react-native';
 
 const useScreenSize = () => {
-  const window = Dimensions.get('window');
+  const screen = Dimensions.get('screen');
 
-  const [dimensions, setDimensions] = useState(window);
+  const [dimensions, setDimensions] = useState(screen);
 
   useEffect(() => {
-    const subscriber = Dimensions.addEventListener('change', ({ window }) => {
-      setDimensions(window);
+    const subscriber = Dimensions.addEventListener('change', ({ screen }) => {
+      setDimensions(screen);
     });
     return () => subscriber?.remove();
   });
