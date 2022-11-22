@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "TenFrame",
-    "slug": "TenFrame",
+    "slug": "tensquare",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -18,16 +18,24 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ajdevs.tensquare"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.ajdevs.tensquare"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "75b569d9-11f9-4a43-a463-1e926761fb89"
+      }
+    },
+    "owner": "ajdevs"
   }
 }
