@@ -38,3 +38,4 @@ Resources used:
 - Tests!
 - Animations - https://docs.swmansion.com/react-native-reanimated/
 - Splash Screen
+- Responsive text scaling + Input field?
